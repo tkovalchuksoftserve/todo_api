@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p id="notice"><%= notice %></p>
+
+        <p>
+          <strong>Start Time:</strong>
+          <%= @to_do.starttime %>
+        </p>
+
+        <p>
+          <strong>Task:</strong>
+          <%= @to_do.task %>
+        </p>
+		
+        <p>
+          <strong>Done:</strong>
+          <%= @to_do.done %>
+        </p>
+
+        <p>
+          <strong>Description:</strong>
+          <%= @to_do.description %>
+        </p>
+		
+        <p>
+          <strong>Address:</strong>
+          <%= @to_do.address %>
+        </p>
+		
+        <p>
+          <strong>Longtitude:</strong>
+          <%= @to_do.gpslongitude %>
+        </p>
+        <p>
+          <strong>Latitude:</strong>
+          <%= @to_do.gpslatitude %>
+        </p>
+
+       
+        <%= link_to 'Edit', edit_to_do_path(@to_do), {class: "btn btn-info"} %>
+        <%= link_to 'Back', to_dos_path, {class: "btn btn-default"} %>
+    </div>
+</div>

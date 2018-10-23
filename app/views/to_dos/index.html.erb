@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Listing To Dos</h1>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Done</th>
+              <th>Start Time</th>
+			  <th>Task</th>
+			  <th>Description</th>
+			  <th>Address</th>
+			  <th>Longitude</th>
+			  <th>Latitude</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @to_dos.each do |to_do| %>
+              <tr>
+                <td><%= to_do.done %></td>
+                <td><%= to_do.starttime %></td>
+                <td><%= to_do.task %></td>
+				<td><%= to_do.description %></td>
+				<td><%= to_do.address %></td>
+				<td><%= to_do.gpslongitude %></td>
+				<td><%= to_do.gpslatitude %></td>
+                <td><%= link_to 'Show', to_do, {class: "btn btn-info" } %>
+                    <%= link_to 'Edit', edit_to_do_path(to_do), { class: "btn btn-warning" } %>
+                    <%= link_to 'Destroy', to_do, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <br>
+
+        <%= link_to 'New To do', new_to_do_path, {class: "btn btn-primary"} %>
+    </div>
+</div>
