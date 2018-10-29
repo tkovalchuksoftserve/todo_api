@@ -69,6 +69,6 @@ class ToDosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def to_do_params
-      params.require(:to_do).permit(:task, :description, :done, :starttime, :address, :gpslatitude, :gpslongitude)
+      params.require(:to_do).permit(:task, :description, :done, :actions, :starttime, :address, :gpslatitude, :gpslongitude)
     end
 end
